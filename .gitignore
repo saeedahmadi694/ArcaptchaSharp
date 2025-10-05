@@ -416,3 +416,4 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+/ArcaptchaSharp/ArcaptchaSharp.Presenter/Program.cs
