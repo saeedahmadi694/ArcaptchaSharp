@@ -6,7 +6,7 @@ namespace ArcaptchaSharp.Core.Services
 {
     public interface IArcaptchaService
     {
-        ArcaptchaVerificationResult VerifyArcaptchaResponse(string response, CancellationToken cancellationToken);
+        ArcaptchaVerificationResult VerifyArcaptchaResponse(string response);
         Task<ArcaptchaVerificationResult> VerifyArcaptchaResponseAsync(string response, CancellationToken cancellationToken);
     }
 }

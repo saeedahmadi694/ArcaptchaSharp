@@ -15,8 +15,8 @@ public static class ServiceCollectionExtensions
         {
             var setting = sp.GetRequiredService<IOptionsMonitor<ArcaptchaSetting>>().CurrentValue;
             return new ArcaptchaService(
-                setting.SecretKey,
                 setting.SiteKey,
+                setting.SecretKey,
                 setting.VerificationUrl
             );
         }));

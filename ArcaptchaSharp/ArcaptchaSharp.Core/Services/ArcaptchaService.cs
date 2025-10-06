@@ -4,7 +4,6 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -19,7 +18,7 @@ namespace ArcaptchaSharp.Core.Services
         private readonly string _siteKey;
         private readonly string _verificationUrl;
 
-        public ArcaptchaService(string secretKey, string siteKey, string verificationUrl)
+        public ArcaptchaService(string siteKey, string secretKey, string verificationUrl)
         {
             _httpClientFactory = new DefaultHttpClientFactory();
             _secretKey = secretKey;
@@ -27,7 +26,7 @@ namespace ArcaptchaSharp.Core.Services
             _verificationUrl = verificationUrl;
         }
 
-        public ArcaptchaVerificationResult VerifyArcaptchaResponse(string response, CancellationToken cancellationToken)
+        public ArcaptchaVerificationResult VerifyArcaptchaResponse(string response)
         {
             var data = new
             {
